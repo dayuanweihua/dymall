@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dayuan.dao.GoodsMapper">
+
+	<select id="selectGoodByParam" resultType="goods">
+		select
+		id,
+		goods_name,
+		goods_type,
+		promotion_price,
+		original_price,
+		brand_id,
+		picture_url
+		from t_goods
+		<where>
+			<if test="goodsName!=null">
+				goods_name LIKE concat('%',(#{goodsName}),'%')
+			</if>
+			
+	
+		</where>
+	</select>
+
+	<select id="selectGoodByGoodId" resultType="goods">
+		select
+		id,
+		goods_name,
+		goods_type,
+		promotion_price,
+		original_price,
+		brand_id,
+		picture_url
+		from
+		t_goods where id=#{goodsId}
+	</select>
+
+	
+	
+	<select id="selectGoodsTypeByGoodsTypeId">
+		select a.name,
+		from t_goods as a,t_goods_type as b
+		where a.goods_type=b.id ;
+	</select>
+	
+</mapper>

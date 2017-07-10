@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dayuan.dao.CartMapper">
+
+	<select id="selectCartInfos" resultType="cartInfo">
+		select
+		id,
+		cart_id,
+		goods_id,
+		goods_name,
+		picture_url,
+		buy_number,
+		goods_original_price,
+		goods_promotion_price
+		from t_cart_info where cart_id=#{cartId}
+	</select>
+	
+	<select id="selectCart" resultType="cart">
+		select
+		id,
+		user_id
+		from t_cart where user_id=#{userId}
+	</select>
+
+	<insert id="insertCart" keyProperty="id" useGeneratedKeys="true">
+		insert into t_cart
+			(user_id)
+		values(#{userId})
+	</insert>
+	
+	<insert id="insertCartInfo" keyProperty="id" useGeneratedKeys="true">
+		insert into t_cart_info
+			(cart_id,
+			goods_id,
+			goods_name,
+			picture_url,
+			buy_number,
+			goods_original_price,
+			goods_promotion_price)
+		values(#{cartId},#{goodsId},#{goodsName},#{pictureUrl},#{buyNumber},#{goodsOriginalPrice},#{goodsPromotionPrice})
+	</insert>
+
+	<delete id="deleteCartInfoById">
+		delete from t_cart_info where cart_id=#{cartId} and goods_id=#{goodsId}
+	</delete>
+
+	<update id="updateCartInfo">
+		update t_cart_info set buy_number=#{changeNumber} 
+		where cart_id=#{cartId} and goods_id=#{goodsId}
+	</update>
+
+
+</mapper>

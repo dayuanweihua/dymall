@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dayuan.dao.GoodsTypesMapper">
+	<select id="selectGoodsTypeByPid" resultType="goodsTypes">
+		select
+		id,name,pid
+		from t_goods_type where pid= #{pid}
+	</select>
+	
+	
+	<!-- 关键字模糊查询商品 -->
+	<select id="selectGoodsListByKeyword" resultType="goods">
+		select
+		id,goods_name,goods_type,goods_promotion_price,goods_original_price,brand_id,picture_url
+		 from t_goods 
+			WHERE goods_name LIKE CONCAT(CONCAT('小丸子%', #{keyword}), '%');
+	</select>
+
+	<!-- 获取商品类目树 -->
+	<select id="selectGoodsTypeByParam" resultType="goodsTypes">
+		select id,name,pid
+		from t_goods_type
+		<where>
+			<if test="id!= null">
+				AND id=#{id}
+			</if>
+			<if test="name != null">
+				AND name=#{name}
+			</if>
+			<if test="pid!= null">
+				AND pid=#{pid}
+			</if>
+		</where>
+	</select>
+
+</mapper>

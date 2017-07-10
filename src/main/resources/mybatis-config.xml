@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 是否启用下划线与驼峰式命名规则的映射（如first_name => firstName） -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="userInfo" type="com.dayuan.bean.UserInfo" />
+		<typeAlias alias="goodsTypes" type="com.dayuan.bean.GoodsTypes" />
+<typeAlias alias="orderInfo" type="com.dayuan.bean.OrderInfo" />
+<typeAlias alias="goods" type="com.dayuan.bean.Goods" />
+<typeAlias alias="order" type="com.dayuan.bean.Order" />
+<typeAlias alias="goodsStore" type="com.dayuan.bean.GoodsStore" />
+<typeAlias alias="cart" type="com.dayuan.bean.Cart" />
+<typeAlias alias="cartInfo" type="com.dayuan.bean.CartInfo" />
+<typeAlias alias="shippingAddress" type="com.dayuan.bean.ShippingAddress" />
+
+	</typeAliases>
+</configuration>
