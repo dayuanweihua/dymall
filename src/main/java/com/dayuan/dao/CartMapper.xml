@@ -4,6 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dayuan.dao.CartMapper">
 
+
+
+<select id="selectCartInfoS" resultType="cartInfo">
+		select *
+		from t_cart_info 
+	</select>
+
+
 	<select id="selectCartInfos" resultType="cartInfo">
 		select
 		id,

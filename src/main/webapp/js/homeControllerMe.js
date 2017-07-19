@@ -74,7 +74,7 @@
 	//渲染类目
 	$.ajax({
 		type : "POST",
-		url : "http://localhost:8081/dymall/goodsType/getGoodsTypes.shtml",
+		url : "http://www.dymall.com/goods/getGoodsList.shtml",
 		data : "",
 		async : false,
 		dataType: "json",

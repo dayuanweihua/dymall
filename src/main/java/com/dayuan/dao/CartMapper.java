@@ -51,5 +51,7 @@ public interface CartMapper {
 	 * @return
 	 */
 	public int updateCartInfo(@Param("changeNumber")Integer changeNumber,@Param("cartId")Long cartId,@Param("goodsId")Long goodsId);
+
+	public List<CartInfo> selectCartInfoS();
 	
 }

@@ -71,6 +71,11 @@ public class CartService {
 	public int updateCartInfo(Integer changeNumber,Long cartId,Long goodsId){
 		return cartMapper.updateCartInfo(changeNumber, cartId, goodsId);
 	}
+
+	public List<CartInfo> selectCartInfoS() {
+	
+		return cartMapper.selectCartInfoS();
+	}
 	
 
 }

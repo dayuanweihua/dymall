@@ -1,5 +1,5 @@
 $.extend({
-	mallHost:"www.dymall.com"
+	mallHost:"http://www.dymall.com"
 });
 
 

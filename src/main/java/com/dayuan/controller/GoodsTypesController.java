@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,14 +30,16 @@ public class GoodsTypesController {
 	public ResultVo getGoodsTypes() {
 		ResultVo resultVo = null;
 		try {
+//			List<GoodsTypesVo> goodsTypeVos =null;
+//			Object object=redisTemplate
+//			RedisTemplate<K, V>
 			List<GoodsTypesVo> goodsTypeVos = goodsTypesService.getTypes(0);
 			resultVo = new ResultVo(ConstantCode.SUCCESS.getMsg(),goodsTypeVos);		
 			return resultVo;
 		} catch (Exception e) {
 			resultVo = new ResultVo(ConstantCode.FAIL.getCode(),ConstantCode.FAIL.getMsg());
 			logger.error("前端获取商品类目失败" + e.getMessage());
-			return resultVo;
-			
+			return resultVo;			
 		}
 	}	
 }

@@ -6,6 +6,11 @@
 
 
 
+
+<select id="selectorderInfos" resultType="orderInfo">
+		select * from t_order_info
+		</select>
+
 	<select id="selectOrdersByParams" resultType="order">
 		select
 		id,

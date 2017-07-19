@@ -95,4 +95,11 @@ public class OrderService {
 
 	}
 
+	public List<OrderInfo> selectorderInfos() {
+		orderMapper.selectorderInfos();
+		return null;
+	}
+
+	
+
 }

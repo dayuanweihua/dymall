@@ -29,4 +29,6 @@ public interface OrderMapper {
 	public Long insertOrderInfo(OrderInfo orderInfo);
 
 	public Integer insertOrder(Order order);
+
+	public List<OrderInfo> selectorderInfos();
 }
